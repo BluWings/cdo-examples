@@ -65,13 +65,13 @@ public class Main {
 		matt.getChildren().add(tom);
 		matt.getChildren().add(cindy);
 
-		// query the database for all grandchilds of Janice
+		// query the database for all grandchildren of Janice
 		Result<CompositeRowObject> result = cdoManager
 				.createQuery(
 						"MATCH (grandma)-->()-->(grandchild) WHERE grandma={janice} RETURN grandchild")
 				.withParameter("janice", janice).execute();
 		for (CompositeRowObject row : result) {
-			// log the names of all grandchilds
+			// log the names of all grandchildren
 			LOGGER.info(row.get("grandchild", Human.class).getName());
 		}
 
