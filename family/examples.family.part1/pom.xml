@@ -25,4 +25,17 @@
 		</dependency>
 	</dependencies>
 
+	<organization>
+		<name>SMB Gesellschaft fuer Softwareentwicklung mbH</name>
+		<url>http://www.smb-tec.com</url>
+	</organization>
+	<scm>
+		<connection>scm:git:git://git@github.com:BluWings/cdo-examples.git</connection>
+		<developerConnection>scm:git:git://git@github.com:BluWings/cdo-examples.git</developerConnection>
+		<url>https://github.com/BluWings/cdo-examples</url>
+	</scm>
+	<issueManagement>
+		<system>github</system>
+		<url>https://github.com/BluWings/cdo-examples/issues</url>
+	</issueManagement>
 </project>
