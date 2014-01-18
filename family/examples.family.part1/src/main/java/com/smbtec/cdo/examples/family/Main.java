@@ -10,6 +10,7 @@ import org.slf4j.LoggerFactory;
 
 import com.buschmais.cdo.api.CdoManager;
 import com.buschmais.cdo.api.CdoManagerFactory;
+import com.buschmais.cdo.api.ConcurrencyMode;
 import com.buschmais.cdo.api.Query.Result;
 import com.buschmais.cdo.api.Query.Result.CompositeRowObject;
 import com.buschmais.cdo.api.TransactionAttribute;
@@ -17,6 +18,7 @@ import com.buschmais.cdo.api.ValidationMode;
 import com.buschmais.cdo.api.bootstrap.Cdo;
 import com.buschmais.cdo.api.bootstrap.CdoUnit;
 import com.buschmais.cdo.neo4j.api.Neo4jCdoProvider;
+
 import com.smbtec.cdo.examples.family.domain.Human;
 
 public class Main {
@@ -28,7 +30,7 @@ public class Main {
 		// create a CdoUnit - some kind of configuration unit
 		CdoUnit cdoUnit = new CdoUnit("", "", URI.create("memory:///"),
 				Neo4jCdoProvider.class, getTypes(), ValidationMode.AUTO,
-				TransactionAttribute.MANDATORY, new Properties());
+				ConcurrencyMode.SINGLETHREADED, TransactionAttribute.MANDATORY, new Properties());
 
 		// create CdoManagerFactory using the previously create CdoUnit
 		CdoManagerFactory cdoManagerFactory = Cdo
