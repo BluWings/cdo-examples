@@ -1,7 +1,9 @@
 package com.smbtec.cdo.examples.family;
 
 import java.net.URI;
+import java.util.Collections;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Properties;
 import java.util.Set;
 
@@ -13,12 +15,11 @@ import com.buschmais.cdo.api.CdoManagerFactory;
 import com.buschmais.cdo.api.ConcurrencyMode;
 import com.buschmais.cdo.api.Query.Result;
 import com.buschmais.cdo.api.Query.Result.CompositeRowObject;
-import com.buschmais.cdo.api.TransactionAttribute;
+import com.buschmais.cdo.api.Transaction.TransactionAttribute;
 import com.buschmais.cdo.api.ValidationMode;
 import com.buschmais.cdo.api.bootstrap.Cdo;
 import com.buschmais.cdo.api.bootstrap.CdoUnit;
 import com.buschmais.cdo.neo4j.api.Neo4jCdoProvider;
-
 import com.smbtec.cdo.examples.family.domain.Human;
 
 public class Main {
@@ -29,7 +30,7 @@ public class Main {
 
 		// create a CdoUnit - some kind of configuration unit
 		CdoUnit cdoUnit = new CdoUnit("", "", URI.create("memory:///"),
-				Neo4jCdoProvider.class, getTypes(), ValidationMode.AUTO,
+				Neo4jCdoProvider.class, getTypes(), getListeners(), ValidationMode.AUTO,
 				ConcurrencyMode.SINGLETHREADED, TransactionAttribute.MANDATORY, new Properties());
 
 		// create CdoManagerFactory using the previously create CdoUnit
@@ -88,4 +89,7 @@ public class Main {
 		return classes;
 	}
 
+	private static List<Class<?>> getListeners() {
+		return Collections.<Class<?>>emptyList();
+	}
 }
