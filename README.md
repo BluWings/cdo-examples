@@ -1,14 +1,12 @@
-Composite Data Objects for Java - Examples
-==========================================
+eXtended Objects (XO) - Examples
+================================
 
-This repository contains examples of 'Composite Data Objects for Java'. To try it out clone this repository and run the examples listed below.
+This repository contains examples for the use of [eXtended Objects](https://www.github.com/buschmais/extended-objects) framework. To try it out clone this repository and run the examples listed below.
 
 Usage:
 ------
 
-```
-git clone https://github.com/BluWings/cdo-examples.git`
-```
+	git clone https://github.com/BluWings/xo-examples.git
 
 
 Contents:
